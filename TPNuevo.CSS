@@ -1,0 +1,92 @@
+/*NO DEJAR ESPACIOS SI NO NO FUNCIONA!!*/
+p::before { /*ANTES*/
+	content: 'INICIO'; /*ESTE PSEUDOELEMTO ME SIRVE PARA CAMBIAR TODO DE UNA SOLA VEZ NO IR UNO `POR UNO A CAMBIARLO*/
+	color: tomato;
+	font-weight: bold; 
+}
+/*p::after { *//*DESPUES*/
+	/*content: 'FIN'; *//*ESTE PSEUDOELEMTO ME SIRVE PARA CAMBIAR TODO DE UNA SOLA VEZ NO IR UNO `POR UNO A CAMBIARLO*/
+	/*color: tomato;
+	font-weight: bold; */
+}
+/*p::before { *//*ANTES*/
+	/*content: url(emogi.jpg);*/ /*CON CONTENT SOLO PUEDO AGRGAR ICONOS (16 px APROX.) PARA AGREGAR IMAGENES USO BAGRAND-IMAG */
+body {
+	counter-reset: contador; /*ES COMO SI FUERA EL NOMBRE DE UNA VARIABLE */
+							/*ESTE CONTADOR SE PONE EN 0*/
+}
+p {
+counter-increment: contador; /*ESTA ETIQUETA LO QUE HACE ES INCREMENTAR DE UNO EN UNO, VA SUMANDO*/
+}
+p::before { /*CONCATENO*/ /*CON ESAS COMILLAS VACIAS SEPARO LA PALABRA SERVICIO DE LOS PARRAFOS*/
+							/*AHI DENTRO PUEDO PONER //, - , LO QUE QUIERA*/
+	content: 'SERVICIO ' counter(contador) ' ' ;
+	color: teal;
+}
+ul { /*EL ESTILO DE UNA LISTA DESORDENADA LO CAMBIO EN EL CSS*/
+	list-style-type: circle;
+	/*list-style-image: url(imagen.jpg);*/ /*UN ICONO SERIA, UNA IMAGEN ES MUY GRANDE*/
+}
+a { /*PARA COLOCAR UN ICONO TENGO QUE DIVIDIR POR 3 PORQUE EN EL ANCHON TENGO 3 ICONOS
+	Y LUEGO DIVIDO POR 2 PORQUE EN EL ALTO TENGO 2 ICONOS*/
+	background-image: url(imagen3.png);
+	width: 92px;
+	height: 91px;
+	float: left;
+}
+.instagram {
+background-position: 0px 0px;
+}
+.twitter {
+background-position: -92px 0px;
+}
+.facebook {
+background-position: -184px 0px;
+}
+.instagram:hover {
+	background-position: 0px 92px;
+}
+.twitter:hover {
+background-position: -92px -92px;
+}
+.facebook:hover {
+background-position: -184px -92px;
+}
+/*CON ESTAS ETIQUETAS LE DAMOS VIDA A LA IMAGEN*/
+.nenito {
+	background-image: url(sprites1.jpg);
+	width: 69.83px;
+	height: 120px; /*ACA PONGO EL, MISMO ANCHO DE LA IMAGEN PORQUE SOLO TENGO UNA FILA DE IAMGEN*/
+	float: left;
+	background-position:0px 0px;
+	margin: 0 auto; 
+	/*ETIQUETA/ACCION/TIEMPO/CANT.DE IMAGENES/ INFINITO PARA QUE NO PARE DE MOVERSE*/
+	animation: correr 3s steps(6) infinite;
+}
+@keyframes correr { /*ACA ESCRIBO LA ACCION*/
+0% {
+background-position: 0px;
+}
+50% {
+	background-position: 209.5px;
+}
+100% {
+background-position: 419px; /*ACA VA EL ANCHO TOTAL DE LA IMAGEN, PORQUE ES MI 100%*/
+}							
+}
+.carrusel {
+	background-color: pink;
+	animation-name: transicion;
+	animation-duration: 3s;
+}
+@keyframes transicion{
+0% {
+margin-left: 100%;
+width: 100%;
+}
+100% {
+margin-left: 0%;
+width: 100%;
+}
+}
+
